@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Algorithm Library | Interactive DSA Visualizer</title>
+    
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ======================================================================
+         1. NAVIGATION BAR
+         ====================================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-algolib">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand d-flex align-items-center spa-nav-link" href="#home" data-target="home">
+                <span class="brand-logo-icon me-2">
+                    <i class="bi bi-book-half"></i>
+                </span>
+                <div>
+                    <div class="brand-text">Algorithm Library</div>
+                    <div class="brand-subtext">Interactive DSA Laboratory</div>
+                </div>
+            </a>
+
+            <!-- Mobile Navbar Toggler -->
+            <button class="navbar-toggler text-secondary border-0" type="button" data-bs-toggle="collapse" data-bs-target="#algolib-navbar" aria-controls="algolib-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-2 text-gold"></i>
+            </button>
+
+            <!-- Navbar Links & Utilities -->
+            <div class="collapse navbar-collapse" id="algolib-navbar">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link spa-nav-link active" href="#home" data-target="home">
+                            <i class="bi bi-house-door me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link spa-nav-link" href="#sorting" data-target="sorting">
+                            <i class="bi bi-bar-chart-steps me-1"></i> Sorting
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link spa-nav-link" href="#searching" data-target="searching">
+                            <i class="bi bi-search me-1"></i> Searching
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link spa-nav-link" href="#pathfinding" data-target="pathfinding">
+                            <i class="bi bi-signpost-split me-1"></i> Pathfinding
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link spa-nav-link" href="#compare" data-target="compare">
+                            <i class="bi bi-table me-1"></i> Compare Matrix
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link spa-nav-link" href="#quiz" data-target="quiz">
+                            <i class="bi bi-patch-question me-1"></i> DSA Quiz
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Theme & Audio Controls -->
+                <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+                    <!-- Audio Mute Button -->
+                    <button id="mute-toggle-btn" class="btn btn-nav-action" title="Mute/Unmute Audio (M)" aria-label="Toggle Audio">
+                        <i class="bi bi-volume-up-fill"></i>
+                    </button>
+
+                    <!-- Books / Minimal Bar Style Button -->
+                    <button id="bar-style-toggle-btn" class="btn btn-nav-action" title="Toggle Books-as-Bars shelf mode">
+                        <i class="bi bi-book me-1"></i> <span class="d-none d-sm-inline">Library Books</span>
+                    </button>
+
+                    <!-- Dark / Light Theme Button -->
+                    <button id="theme-toggle-btn" class="btn btn-nav-action" title="Switch Theme">
+                        <i class="bi bi-sun-fill me-1"></i> <span class="d-none d-sm-inline">Light</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA (SPA VIEWS)
+         ====================================================================== -->
+    <main class="container-fluid px-lg-4 py-4 flex-grow-1">
+
+        <!-- ==================================================================
+             VIEW 1: HOME PAGE & ALGORITHM CATALOG
+             ================================================================== -->
+        <section id="view-home" class="spa-view active">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <span class="badge badge-gold mb-3">
+                            <i class="bi bi-stars me-1"></i> Zen Step-by-Step Architecture
+                        </span>
+                        <h1 class="hero-title">
+                            The Algorithm Library:<br>
+                            <span>Where Algorithms Come Alive.</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Step through sorting, searching, and pathfinding in a quiet, distraction-free
+                            environment. Every step is recorded for seamless time-travel, viva defense,
+                            and deep algorithmic intuition.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-ctrl-primary px-3 py-2 spa-nav-link" data-target="sorting">
+                                <i class="bi bi-play-circle-fill me-1"></i> Sorting Visualizer
+                            </button>
+                            <button class="btn btn-ctrl px-3 py-2 spa-nav-link" data-target="pathfinding">
+                                <i class="bi bi-grid-3x3-gap-fill me-1"></i> Pathfinding Grid
+                            </button>
+                            <button class="btn btn-ctrl px-3 py-2 spa-nav-link" data-target="quiz">
+                                <i class="bi bi-mortarboard-fill me-1"></i> Viva Quiz Prep
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Live Mini Hero Visualizer -->
+                    <div class="col-lg-5">
+                        <div class="hero-mini-box">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="small text-gold fw-bold">
+                                    <i class="bi bi-activity me-1"></i> Live Laboratory Pulse
+                                </div>
+                                <span class="badge bg-success-subtle text-success small">Bubble Sort Cycle</span>
+                            </div>
+                            <div id="hero-mini-canvas" class="hero-mini-canvas"></div>
+                            <div class="small text-muted mt-2 text-center">
+                                Fluid, calm step snapshots. No jarring flashes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Algorithm Catalog Grid -->
+            <div class="mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                    <div>
+                        <h2 class="h4 mb-1">Archived DSA Collections</h2>
+                        <div class="text-secondary small">Choose an algorithm below to open its dedicated interactive player.</div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-gold spa-nav-link" data-target="compare">
+                            <i class="bi bi-table me-1"></i> Open Full Comparison Matrix
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Bubble Sort -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-arrow-left-right"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Bubble Sort</h3>
+                                    <span class="badge badge-cat-sorting">Sorting</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Repeatedly swaps adjacent elements if out of order until the largest value bubbles to the end.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Worst: O(n²)</span>
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Space: O(1)</span>
+                                    <span class="badge bg-success-subtle text-success">Stable</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="sorting" onclick="window.navigateTo('sorting', 'bubble')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize Bubble Sort
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Selection Sort -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-hand-index-thumb"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Selection Sort</h3>
+                                    <span class="badge badge-cat-sorting">Sorting</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Repeatedly scans unsorted region to select the minimum item and swaps it into place.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Worst: O(n²)</span>
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Space: O(1)</span>
+                                    <span class="badge bg-danger-subtle text-danger">Unstable</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="sorting" onclick="window.navigateTo('sorting', 'selection')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize Selection Sort
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Insertion Sort -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-box-arrow-in-down-right"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Insertion Sort</h3>
+                                    <span class="badge badge-cat-sorting">Sorting</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Builds a sorted array one element at a time by sliding larger items rightward.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Worst: O(n²)</span>
+                                    <span class="badge bg-success-subtle text-success font-mono">Best: Ω(n)</span>
+                                    <span class="badge bg-success-subtle text-success">Stable</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="sorting" onclick="window.navigateTo('sorting', 'insertion')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize Insertion Sort
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Merge Sort -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-diagram-2"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Merge Sort</h3>
+                                    <span class="badge badge-cat-sorting">Sorting</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Divide-and-conquer strategy dividing array in halves, recursively sorting and merging.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-success-subtle text-success font-mono">O(n log n)</span>
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Space: O(n)</span>
+                                    <span class="badge bg-success-subtle text-success">Stable</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="sorting" onclick="window.navigateTo('sorting', 'merge')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize Merge Sort
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Sort -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-lightning-charge"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Quick Sort</h3>
+                                    <span class="badge badge-cat-sorting">Sorting</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Picks a pivot element and partitions array into items smaller and larger than pivot.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-success-subtle text-success font-mono">θ(n log n)</span>
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Space: O(log n)</span>
+                                    <span class="badge bg-danger-subtle text-danger">Unstable</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="sorting" onclick="window.navigateTo('sorting', 'quick')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize Quick Sort
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Heap Sort -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-tree"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Heap Sort</h3>
+                                    <span class="badge badge-cat-sorting">Sorting</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Transforms array into Max-Heap and repeatedly extracts the root maximum to the end.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-success-subtle text-success font-mono">O(n log n)</span>
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Space: O(1)</span>
+                                    <span class="badge bg-danger-subtle text-danger">Unstable</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="sorting" onclick="window.navigateTo('sorting', 'heap')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize Heap Sort
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Binary Search -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-search"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Binary Search</h3>
+                                    <span class="badge badge-cat-searching">Searching</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Logarithmic search that halves the search space at every step using midpoints.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-success-subtle text-success font-mono">O(log n)</span>
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Space: O(1)</span>
+                                    <span class="badge bg-info-subtle text-info">Sorted only</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="searching" onclick="window.navigateTo('searching', 'binary')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize Binary Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- A* Pathfinding -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-compass"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">A* Search</h3>
+                                    <span class="badge badge-cat-pathfinding">Pathfinding</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Heuristic-informed pathfinding using f(n) = g(n) + h(n) for optimal navigation.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-success-subtle text-success">Optimal</span>
+                                    <span class="badge bg-secondary-subtle text-secondary font-mono">Space: O(V)</span>
+                                    <span class="badge bg-info-subtle text-info">Heuristic</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="pathfinding" onclick="window.navigateTo('pathfinding', 'astar')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize A* Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- BFS Pathfinding -->
+                    <div class="col">
+                        <div class="catalog-card">
+                            <div>
+                                <div class="catalog-card-icon"><i class="bi bi-record-circle"></i></div>
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h5 mb-0">Breadth-First Search</h3>
+                                    <span class="badge badge-cat-pathfinding">Pathfinding</span>
+                                </div>
+                                <p class="text-secondary small mb-3">Level-by-level ripple expansion. Guarantees shortest path on unweighted graphs.</p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-success-subtle text-success font-mono">O(V + E)</span>
+                                    <span class="badge bg-success-subtle text-success">Shortest Path</span>
+                                    <span class="badge bg-secondary-subtle text-secondary">FIFO Queue</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-ctrl w-100 spa-nav-link" data-target="pathfinding" onclick="window.navigateTo('pathfinding', 'bfs')">
+                                <i class="bi bi-play-circle me-1"></i> Visualize BFS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 2: SORTING VISUALIZER (SINGLE & RACE MODE)
+             ================================================================== -->
+        <section id="view-sorting" class="spa-view">
+            <!-- Header & Algorithm Selection -->
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <h2 id="sorting-title" class="h3 mb-0">Bubble Sort</h2>
+                    <div id="sorting-desc" class="text-secondary small">Repeatedly steps through the list, compares adjacent elements...</div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Race Mode Switch -->
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" id="race-mode-toggle">
+                        <label class="form-check-label fw-bold text-gold small" for="race-mode-toggle">
+                            <i class="bi bi-flag-fill me-1"></i> Race Mode (Dual Canvas)
+                        </label>
+                    </div>
+
+                    <!-- Algorithm Select -->
+                    <select id="sorting-algo-select" class="form-select form-select-zen" aria-label="Select Sorting Algorithm">
+                        <option value="bubble" selected>Bubble Sort</option>
+                        <option value="selection">Selection Sort</option>
+                        <option value="insertion">Insertion Sort</option>
+                        <option value="merge">Merge Sort</option>
+                        <option value="quick">Quick Sort</option>
+                        <option value="heap">Heap Sort</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Race Finish Announcement Banner -->
+            <div id="race-status-banner" class="alert alert-dark border-subtle d-none text-center py-2 mb-3" role="status"></div>
+
+            <!-- Live Metrics Row -->
+            <div class="metrics-strip">
+                <div class="metric-pill">
+                    <span class="metric-label">Comparisons:</span>
+                    <span id="sorting-counter-comps" class="metric-value text-gold">0</span>
+                </div>
+                <div class="metric-pill">
+                    <span class="metric-label">Swaps / Writes:</span>
+                    <span id="sorting-counter-swaps" class="metric-value text-gold">0</span>
+                </div>
+                <div class="metric-pill">
+                    <span class="metric-label">Timeline Step:</span>
+                    <span id="sorting-counter-steps" class="metric-value">0 / 0</span>
+                </div>
+                <div class="metric-pill ms-auto text-muted small d-none d-md-flex align-items-center">
+                    <i class="bi bi-keyboard me-1"></i> Space: Play/Pause | ← / →: Step | R: Reset | M: Mute
+                </div>
+            </div>
+
+            <!-- Visualizer Canvases (Single Canvas vs Race Canvas) -->
+            <div class="row g-3">
+                <!-- Canvas 1 (Primary Algorithm) -->
+                <div class="col-12" id="sorting-canvas-col-1">
+                    <div class="algo-canvas-wrapper">
+                        <div id="sorting-canvas" class="algo-bars-container"></div>
+                    </div>
+                </div>
+
+                <!-- Canvas 2 (Race Mode Secondary Algorithm) -->
+                <div class="col-12 d-none" id="sorting-race-container">
+                    <div class="d-flex justify-content-between align-items-center mb-2 mt-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="race-badge"><i class="bi bi-lightning-charge-fill me-1"></i> Challenger</span>
+                            <select id="race-algo2-select" class="form-select form-select-zen py-1" aria-label="Select Challenger Algorithm">
+                                <option value="bubble">Bubble Sort</option>
+                                <option value="selection">Selection Sort</option>
+                                <option value="insertion">Insertion Sort</option>
+                                <option value="merge">Merge Sort</option>
+                                <option value="quick" selected>Quick Sort</option>
+                                <option value="heap">Heap Sort</option>
+                            </select>
+                        </div>
+                        <div class="d-flex gap-3 small">
+                            <span>Comps: <strong id="race2-counter-comps" class="text-gold font-mono">0</strong></span>
+                            <span>Swaps: <strong id="race2-counter-swaps" class="text-gold font-mono">0</strong></span>
+                            <span>Step: <strong id="race2-counter-steps" class="font-mono">0/0</strong></span>
+                        </div>
+                    </div>
+                    <div class="algo-canvas-wrapper">
+                        <div id="sorting-canvas-race" class="algo-bars-container race-canvas"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accessible Step Narrative Live Region -->
+            <div id="sorting-narrative" class="narrative-box" aria-live="polite" role="status">
+                Press Play or Step Forward to begin the visualization.
+            </div>
+
+            <!-- Timeline Scrub Bar -->
+            <div class="mt-3 px-1">
+                <input type="range" id="sorting-scrubber" class="timeline-scrubber" min="0" max="100" value="0" aria-label="Timeline Scrubber">
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="controls-panel">
+                <div class="row align-items-center g-3">
+                    <!-- Playback Buttons -->
+                    <div class="col-12 col-md-auto d-flex gap-2">
+                        <button id="sorting-play-btn" class="btn btn-ctrl btn-ctrl-primary" aria-label="Play visualization">
+                            <i class="bi bi-play-fill"></i> Play
+                        </button>
+                        <button id="sorting-prev-btn" class="btn btn-ctrl" title="Step Back (Arrow Left)" aria-label="Step Back">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button id="sorting-next-btn" class="btn btn-ctrl" title="Step Forward (Arrow Right)" aria-label="Step Forward">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                        <button id="sorting-reset-btn" class="btn btn-ctrl" title="Reset (R)" aria-label="Reset">
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                        </button>
+                    </div>
+
+                    <!-- Sliders: Speed & Array Size -->
+                    <div class="col-12 col-md-5 d-flex gap-3 align-items-center">
+                        <div class="flex-grow-1">
+                            <label for="sorting-speed-slider" class="small text-secondary mb-0 d-flex justify-content-between">
+                                <span>Speed</span> <span class="text-muted">Fast →</span>
+                            </label>
+                            <input type="range" id="sorting-speed-slider" class="form-range" min="1" max="100" value="80">
+                        </div>
+                        <div class="flex-grow-1">
+                            <label for="sorting-size-slider" class="small text-secondary mb-0 d-flex justify-content-between">
+                                <span>Array Size</span> <span class="text-muted">10 - 60</span>
+                            </label>
+                            <input type="range" id="sorting-size-slider" class="form-range" min="10" max="60" value="25">
+                        </div>
+                    </div>
+
+                    <!-- Presets & Custom Array -->
+                    <div class="col-12 col-md d-flex flex-wrap gap-1 justify-content-md-end">
+                        <button class="btn btn-sm btn-ctrl btn-array-gen" data-gen="random">Random</button>
+                        <button class="btn btn-sm btn-ctrl btn-array-gen" data-gen="reversed">Reversed</button>
+                        <button class="btn btn-sm btn-ctrl btn-array-gen" data-gen="nearly_sorted">Nearly Sorted</button>
+                        <button class="btn btn-sm btn-ctrl btn-array-gen" data-gen="few_unique">Few Unique</button>
+                    </div>
+                </div>
+
+                <!-- Custom Numbers Input Row -->
+                <div class="row mt-3 pt-3 border-top border-subtle align-items-center g-2">
+                    <div class="col-auto small text-secondary">
+                        <i class="bi bi-pencil-square me-1"></i> Custom Array:
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5">
+                        <input type="text" id="custom-array-input" class="form-control form-control-zen py-1" placeholder="e.g. 45, 12, 85, 32, 8, 90, 24" aria-label="Enter comma-separated numbers">
+                    </div>
+                    <div class="col-auto">
+                        <button id="custom-array-btn" class="btn btn-sm btn-ctrl">Apply Custom Numbers</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lower Row: Pseudocode & Complexity Cards -->
+            <div class="row g-3 mt-2">
+                <!-- Pseudocode Panel -->
+                <div class="col-lg-7">
+                    <div class="pseudocode-card">
+                        <div class="pseudocode-card-header">
+                            <span><i class="bi bi-code-slash me-1"></i> Synchronized Pseudocode</span>
+                            <span class="badge bg-secondary-subtle text-secondary small">Line Highlight</span>
+                        </div>
+                        <ol id="sorting-code-list" class="pseudocode-list"></ol>
+                    </div>
+                </div>
+
+                <!-- Complexity Matrix & Viva Notes -->
+                <div class="col-lg-5">
+                    <div class="zen-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="zen-card-header mb-3 pb-2">
+                                <h3 class="h6 text-gold mb-0"><i class="bi bi-speedometer2 me-2"></i>Complexity & Viva Tips</h3>
+                                <span class="badge badge-gold font-mono small">Asymptotic</span>
+                            </div>
+                            <table class="complexity-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="complexity-label">Best-case Time:</td>
+                                        <td class="complexity-val"><span id="complexity-best" class="val-best">Ω(n)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Average Time:</td>
+                                        <td class="complexity-val"><span id="complexity-avg" class="val-avg">θ(n²)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Worst-case Time:</td>
+                                        <td class="complexity-val"><span id="complexity-worst" class="val-worst">O(n²)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Space Complexity:</td>
+                                        <td class="complexity-val"><span id="complexity-space" class="val-space">O(1)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Stable Sorting:</td>
+                                        <td class="complexity-val"><span id="complexity-stable" class="val-stable">Yes</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="viva-box">
+                            <div class="viva-box-header">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                <span>Student Viva Tip</span>
+                            </div>
+                            <span id="sorting-viva-tip" class="viva-box-content"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 3: SEARCHING VISUALIZER (LINEAR & BINARY SEARCH)
+             ================================================================== -->
+        <section id="view-searching" class="spa-view">
+            <!-- Header & Algorithm Selection -->
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <h2 id="searching-title" class="h3 mb-0">Binary Search</h2>
+                    <div id="searching-desc" class="text-secondary small">Repeatedly divides the search interval in half...</div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Target Input Box -->
+                    <div class="d-flex align-items-center gap-2">
+                        <label for="searching-target-input" class="small text-secondary mb-0 fw-bold">Target:</label>
+                        <input type="number" id="searching-target-input" class="form-control form-control-zen py-1 text-center" style="width: 80px;" value="42" aria-label="Search Target Value">
+                    </div>
+
+                    <!-- Algorithm Select -->
+                    <select id="searching-algo-select" class="form-select form-select-zen" aria-label="Select Searching Algorithm">
+                        <option value="binary" selected>Binary Search (Sorted)</option>
+                        <option value="linear">Linear Search</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Live Metrics Strip -->
+            <div class="metrics-strip">
+                <div class="metric-pill">
+                    <span class="metric-label">Comparisons:</span>
+                    <span id="searching-counter-comps" class="metric-value text-gold">0</span>
+                </div>
+                <div class="metric-pill">
+                    <span class="metric-label">Status:</span>
+                    <span id="searching-counter-status" class="metric-value text-primary">Ready</span>
+                </div>
+                <div class="metric-pill">
+                    <span class="metric-label">Timeline Step:</span>
+                    <span id="searching-counter-steps" class="metric-value">0 / 0</span>
+                </div>
+                <div class="metric-pill ms-auto text-muted small d-none d-md-flex align-items-center">
+                    <span class="badge badge-low me-1">L: Low</span>
+                    <span class="badge badge-mid me-1">M: Mid</span>
+                    <span class="badge badge-high me-1">H: High</span>
+                    <span class="badge badge-found">✓: Found</span>
+                </div>
+            </div>
+
+            <!-- Main Searching Canvas -->
+            <div class="algo-canvas-wrapper">
+                <div id="searching-canvas" class="algo-bars-container"></div>
+            </div>
+
+            <!-- Step Narrative Live Region -->
+            <div id="searching-narrative" class="narrative-box" aria-live="polite" role="status">
+                Press Play or Step Forward to begin the search trajectory.
+            </div>
+
+            <!-- Timeline Scrubber -->
+            <div class="mt-3 px-1">
+                <input type="range" id="searching-scrubber" class="timeline-scrubber" min="0" max="100" value="0" aria-label="Search Timeline Scrubber">
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="controls-panel">
+                <div class="row align-items-center g-3">
+                    <div class="col-12 col-md-auto d-flex gap-2">
+                        <button id="searching-play-btn" class="btn btn-ctrl btn-ctrl-primary" aria-label="Play search">
+                            <i class="bi bi-play-fill"></i> Play
+                        </button>
+                        <button id="searching-prev-btn" class="btn btn-ctrl" aria-label="Step Back">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button id="searching-next-btn" class="btn btn-ctrl" aria-label="Step Forward">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                        <button id="searching-reset-btn" class="btn btn-ctrl" aria-label="Reset">
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                        </button>
+                        <button id="searching-new-array-btn" class="btn btn-ctrl">
+                            <i class="bi bi-shuffle me-1"></i> New Array
+                        </button>
+                    </div>
+
+                    <div class="col-12 col-md-5 d-flex gap-3 align-items-center">
+                        <div class="flex-grow-1">
+                            <label for="searching-speed-slider" class="small text-secondary mb-0 d-flex justify-content-between">
+                                <span>Speed</span> <span class="text-muted">Fast →</span>
+                            </label>
+                            <input type="range" id="searching-speed-slider" class="form-range" min="1" max="100" value="65">
+                        </div>
+                        <div class="flex-grow-1">
+                            <label for="searching-size-slider" class="small text-secondary mb-0 d-flex justify-content-between">
+                                <span>Array Size</span> <span class="text-muted">10 - 40</span>
+                            </label>
+                            <input type="range" id="searching-size-slider" class="form-range" min="10" max="40" value="20">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lower Row: Pseudocode & Complexity -->
+            <div class="row g-3 mt-2">
+                <div class="col-lg-7">
+                    <div class="pseudocode-card">
+                        <div class="pseudocode-card-header">
+                            <span><i class="bi bi-code-slash me-1"></i> Synchronized Pseudocode</span>
+                            <span class="badge bg-secondary-subtle text-secondary small">Interval Halving</span>
+                        </div>
+                        <ol id="searching-code-list" class="pseudocode-list"></ol>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="zen-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="zen-card-header mb-3 pb-2">
+                                <h3 class="h6 text-gold mb-0"><i class="bi bi-speedometer2 me-2"></i>Complexity & Viva Tips</h3>
+                                <span class="badge badge-gold font-mono small">Asymptotic</span>
+                            </div>
+                            <table class="complexity-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="complexity-label">Best-case Time:</td>
+                                        <td class="complexity-val"><span id="searching-complexity-best" class="val-best">Ω(1)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Average Time:</td>
+                                        <td class="complexity-val"><span id="searching-complexity-avg" class="val-avg">θ(log n)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Worst-case Time:</td>
+                                        <td class="complexity-val"><span id="searching-complexity-worst" class="val-worst">O(log n)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Space Complexity:</td>
+                                        <td class="complexity-val"><span id="searching-complexity-space" class="val-space">O(1)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="viva-box">
+                            <div class="viva-box-header">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                <span>Viva Question & Key Invariant</span>
+                            </div>
+                            <span id="searching-viva-tip" class="viva-box-content"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 4: PATHFINDING VISUALIZER (BFS, DFS, DIJKSTRA, A*)
+             ================================================================== -->
+        <section id="view-pathfinding" class="spa-view">
+            <!-- Header & Algorithm Selection -->
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <h2 id="pathfinding-title" class="h3 mb-0">Breadth-First Search (BFS)</h2>
+                    <div id="pathfinding-desc" class="text-secondary small">Explores all neighbor nodes at present depth before moving deeper...</div>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <select id="pathfinding-algo-select" class="form-select form-select-zen" aria-label="Select Pathfinding Algorithm">
+                        <option value="bfs" selected>Breadth-First Search (BFS)</option>
+                        <option value="dfs">Depth-First Search (DFS)</option>
+                        <option value="dijkstra">Dijkstra's Algorithm</option>
+                        <option value="astar">A* Search (Manhattan Heuristic)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Pathfinding Control Strip -->
+            <div class="metrics-strip">
+                <div class="metric-pill">
+                    <span class="metric-label">Nodes Visited:</span>
+                    <span id="path-counter-visited" class="metric-value text-gold">0</span>
+                </div>
+                <div class="metric-pill">
+                    <span class="metric-label">Shortest Path Length:</span>
+                    <span id="path-counter-length" class="metric-value text-gold">0</span>
+                </div>
+                <div class="metric-pill">
+                    <span class="metric-label">Search Duration:</span>
+                    <span id="path-counter-time" class="metric-value font-mono">0 ms</span>
+                </div>
+
+                <!-- Legend -->
+                <div class="ms-auto d-flex align-items-center gap-2 small flex-wrap">
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="width: 12px; height: 12px; background: #28a745; border-radius: 2px;"></span> Start
+                    </span>
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="width: 12px; height: 12px; background: #dc3545; border-radius: 2px;"></span> Target
+                    </span>
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="width: 12px; height: 12px; background: #1c363b; border-radius: 2px;"></span> Wall
+                    </span>
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="width: 12px; height: 12px; background: var(--grid-visited); border-radius: 2px;"></span> Visited
+                    </span>
+                    <span class="d-inline-flex align-items-center gap-1">
+                        <span style="width: 12px; height: 12px; background: var(--accent-gold); border-radius: 2px;"></span> Path
+                    </span>
+                </div>
+            </div>
+
+            <!-- Mobile Pan Hint -->
+            <div class="small text-gold d-block d-md-none text-center mb-1">
+                <i class="bi bi-arrows-expand me-1"></i> Swipe horizontally on mobile to pan the grid canvas
+            </div>
+
+            <!-- Pathfinding Interactive 2D Grid -->
+            <div class="grid-wrapper">
+                <div id="grid-canvas" class="grid-canvas" role="grid" aria-label="Interactive Pathfinding Grid"></div>
+            </div>
+
+            <div class="small text-muted mt-2 text-center">
+                <i class="bi bi-info-circle me-1"></i> Tip: Click and drag across the grid to build walls. Drag the green start or red target flags to reposition them!
+            </div>
+
+            <!-- Pathfinding Toolbar -->
+            <div class="controls-panel mt-3">
+                <div class="row align-items-center g-3">
+                    <div class="col-12 col-md-auto d-flex flex-wrap gap-2">
+                        <button id="pathfinding-start-btn" class="btn btn-ctrl btn-ctrl-primary" aria-label="Start Pathfinding">
+                            <i class="bi bi-play-circle-fill me-1"></i> Start Search
+                        </button>
+                        <button id="pathfinding-maze-btn" class="btn btn-ctrl">
+                            <i class="bi bi-bricks me-1"></i> Random Maze
+                        </button>
+                        <button id="pathfinding-clear-path-btn" class="btn btn-ctrl">
+                            <i class="bi bi-eraser me-1"></i> Clear Path
+                        </button>
+                        <button id="pathfinding-clear-walls-btn" class="btn btn-ctrl">
+                            <i class="bi bi-trash me-1"></i> Clear Walls
+                        </button>
+                    </div>
+
+                    <div class="col-12 col-md-4 ms-md-auto d-flex align-items-center gap-3">
+                        <label for="pathfinding-speed-slider" class="small text-secondary mb-0 text-nowrap">Animation Speed:</label>
+                        <input type="range" id="pathfinding-speed-slider" class="form-range" min="1" max="100" value="70">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lower Row: Pseudocode & Pathfinding Invariants -->
+            <div class="row g-3 mt-2">
+                <div class="col-lg-7">
+                    <div class="pseudocode-card">
+                        <div class="pseudocode-card-header">
+                            <span><i class="bi bi-code-slash me-1"></i> Algorithm Pseudocode</span>
+                            <span class="badge bg-secondary-subtle text-secondary small">Traversal Logic</span>
+                        </div>
+                        <ol id="pathfinding-code-list" class="pseudocode-list"></ol>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="zen-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="zen-card-header mb-3 pb-2">
+                                <h3 class="h6 text-gold mb-0"><i class="bi bi-speedometer2 me-2"></i>Complexity & Viva Tips</h3>
+                                <span class="badge badge-gold font-mono small">Graph Metrics</span>
+                            </div>
+                            <table class="complexity-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="complexity-label">Time Complexity:</td>
+                                        <td class="complexity-val"><span id="path-complexity-time" class="val-best">O(V + E)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Space Complexity:</td>
+                                        <td class="complexity-val"><span id="path-complexity-space" class="val-space">O(V)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="complexity-label">Guarantees Shortest Path:</td>
+                                        <td class="complexity-val"><span id="path-complexity-shortest" class="val-stable">Yes (Unweighted)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="viva-box">
+                            <div class="viva-box-header">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                <span>Viva Concept & Key Invariant</span>
+                            </div>
+                            <span id="pathfinding-viva-tip" class="viva-box-content"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 5: ALGORITHM COMPARISON MATRIX
+             ================================================================== -->
+        <section id="view-compare" class="spa-view">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <h2 class="h3 mb-0">Algorithm Comparison Matrix</h2>
+                    <div class="text-secondary small">Comprehensive asymptotic reference across all archived sorting, searching, and pathfinding algorithms.</div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="zen-card mb-4 p-3">
+                <div class="row g-3 align-items-center">
+                    <div class="col-12 col-md-5">
+                        <div class="input-group">
+                            <span class="input-group-text bg-surface-elevated border-subtle text-gold"><i class="bi bi-search"></i></span>
+                            <input type="text" id="compare-search-input" class="form-control form-control-zen" placeholder="Filter by name, paradigm, or characteristics...">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-7 d-flex justify-content-md-end gap-2 flex-wrap">
+                        <button class="btn btn-sm btn-ctrl compare-cat-btn active" data-cat="all">All (12)</button>
+                        <button class="btn btn-sm btn-ctrl compare-cat-btn" data-cat="sorting">Sorting (6)</button>
+                        <button class="btn btn-sm btn-ctrl compare-cat-btn" data-cat="searching">Searching (2)</button>
+                        <button class="btn btn-sm btn-ctrl compare-cat-btn" data-cat="pathfinding">Pathfinding (4)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="table-responsive zen-card p-0">
+                <table class="table table-zen table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Category</th>
+                            <th>Best Case</th>
+                            <th>Average Case</th>
+                            <th>Worst Case</th>
+                            <th>Aux Space</th>
+                            <th>Stable / Optimal</th>
+                            <th>Viva Takeaway</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="compare-table-body">
+                        <!-- Rendered dynamically by script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 6: INTERACTIVE DSA QUIZ
+             ================================================================== -->
+        <section id="view-quiz" class="spa-view">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Quiz Header & Progress Tracker -->
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span id="quiz-question-tracker" class="text-gold fw-bold small">Question 1 of 10</span>
+                        <span id="quiz-score-tracker" class="badge badge-gold">Score: 0</span>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress mb-4" style="height: 6px; background-color: var(--bg-surface-elevated);">
+                        <div id="quiz-progress-bar" class="progress-bar bg-warning" role="progressbar" style="width: 10%; transition: width 0.3s ease;"></div>
+                    </div>
+
+                    <!-- Active Question Card -->
+                    <div id="quiz-question-card" class="zen-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span id="quiz-category-badge" class="badge badge-cat-sorting">Sorting</span>
+                            <span class="small text-muted"><i class="bi bi-clock-history me-1"></i> Interactive Exam Mode</span>
+                        </div>
+
+                        <h3 id="quiz-question-text" class="h5 mb-4 text-primary font-serif">
+                            Loading quiz question...
+                        </h3>
+
+                        <!-- Multiple Choice Options -->
+                        <div id="quiz-options-container" class="list-group mb-4"></div>
+
+                        <!-- Feedback & Educational Explanation Box -->
+                        <div id="quiz-explanation-box" class="p-3 rounded bg-surface-elevated border border-subtle d-none mb-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <span id="quiz-verdict-tag" class="badge bg-success me-2">Correct</span>
+                                <strong class="small text-gold">Educational Rationale:</strong>
+                            </div>
+                            <p id="quiz-explanation-text" class="small text-secondary mb-0"></p>
+                        </div>
+
+                        <!-- Next Button -->
+                        <div class="text-end">
+                            <button id="quiz-next-btn" class="btn btn-ctrl-primary px-4 py-2 d-none">
+                                Next Question <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Final Results Card -->
+                    <div id="quiz-results-card" class="zen-card text-center d-none py-5">
+                        <div class="display-3 text-gold mb-3">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <h2 class="h3 font-serif mb-2">Assessment Concluded</h2>
+                        <div id="quiz-final-score" class="display-6 font-mono text-primary mb-3">8 / 10 (80%)</div>
+                        <h3 id="quiz-rank-title" class="h5 text-gold mb-2">Senior Algorithm Fellow</h3>
+                        <p id="quiz-rank-desc" class="text-secondary max-w-md mx-auto mb-4" style="max-width: 500px;">
+                            Exceptional mastery! You understand algorithmic invariants, worst-case degradations, and graph optimalities.
+                        </p>
+                        <button id="quiz-restart-btn" class="btn btn-ctrl-primary px-4 py-2">
+                            <i class="bi bi-arrow-counterclockwise me-1"></i> Retake Examination
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================================================================
+         FOOTER & SOCIAL CONTACT
+         ====================================================================== -->
+    <footer class="footer-algolib">
+        <div class="container-fluid px-lg-4">
+            <div class="row g-4 pb-4 border-bottom border-subtle">
+                <!-- Col 1: Brand & Academic Mission -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="brand-logo-icon me-2">
+                            <i class="bi bi-book-half"></i>
+                        </span>
+                        <div>
+                            <div class="brand-text">Algorithm Library</div>
+                            <div class="brand-subtext">Interactive DSA Laboratory</div>
+                        </div>
+                    </div>
+                    <p class="small text-secondary mb-3">
+                        A peaceful, distraction-free environment for students and educators to build deep algorithmic intuition through step-by-step time-travel exploration.
+                    </p>
+                    <div class="d-flex align-items-center gap-2 text-muted small">
+                        <i class="bi bi-shield-check text-gold"></i>
+                        <span>WCAG AA+ Compliant • Vanilla JavaScript • Open Architecture</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Social Links & Contact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-heading">Connect & Social</div>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="https://www.linkedin.com/in/shubham-tiwari-ba93ba425/" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <i class="bi bi-linkedin text-gold"></i>
+                            <span>LinkedIn Profile</span>
+                            <i class="bi bi-box-arrow-up-right ms-auto small text-muted"></i>
+                        </a>
+                        <a href="https://github.com/shubh43-commits/" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <i class="bi bi-github text-gold"></i>
+                            <span>GitHub Repositories</span>
+                            <i class="bi bi-box-arrow-up-right ms-auto small text-muted"></i>
+                        </a>
+                        <a href="mailto:itzshubham6143@gmail.com" class="footer-social-link">
+                            <i class="bi bi-envelope-fill text-gold"></i>
+                            <span>Email Contact</span>
+                            <i class="bi bi-arrow-right ms-auto small text-muted"></i>
+                        </a>
+                        <button class="footer-social-link text-start" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            <i class="bi bi-chat-dots-fill text-gold"></i>
+                            <span>Send Feedback / Inquiry</span>
+                            <i class="bi bi-send ms-auto small text-muted"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Col 3: Quick Navigation -->
+                <div class="col-6 col-sm-6 col-lg-2">
+                    <div class="footer-heading">Library Navigation</div>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-1">
+                        <li><a href="#home" class="spa-nav-link footer-nav-link" data-target="home"><i class="bi bi-chevron-right me-1 small text-gold"></i> Home Catalog</a></li>
+                        <li><a href="#sorting" class="spa-nav-link footer-nav-link" data-target="sorting"><i class="bi bi-chevron-right me-1 small text-gold"></i> Sorting Lab</a></li>
+                        <li><a href="#searching" class="spa-nav-link footer-nav-link" data-target="searching"><i class="bi bi-chevron-right me-1 small text-gold"></i> Searching Visualizer</a></li>
+                        <li><a href="#pathfinding" class="spa-nav-link footer-nav-link" data-target="pathfinding"><i class="bi bi-chevron-right me-1 small text-gold"></i> Pathfinding Grid</a></li>
+                        <li><a href="#compare" class="spa-nav-link footer-nav-link" data-target="compare"><i class="bi bi-chevron-right me-1 small text-gold"></i> Asymptotic Matrix</a></li>
+                        <li><a href="#quiz" class="spa-nav-link footer-nav-link" data-target="quiz"><i class="bi bi-chevron-right me-1 small text-gold"></i> Viva Exam Quiz</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Keyboard Shortcuts Reference -->
+                <div class="col-6 col-sm-6 col-lg-3">
+                    <div class="footer-heading">Keyboard Shortcuts</div>
+                    <div class="d-flex flex-column gap-2 small">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-secondary">Play / Pause:</span>
+                            <kbd class="kbd-zen">Space</kbd>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-secondary">Step Forward:</span>
+                            <kbd class="kbd-zen">→</kbd>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-secondary">Step Backward:</span>
+                            <kbd class="kbd-zen">←</kbd>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-secondary">Reset Timeline:</span>
+                            <kbd class="kbd-zen">R</kbd>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-secondary">Mute / Unmute:</span>
+                            <kbd class="kbd-zen">M</kbd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Credit Strip -->
+            <div class="row align-items-center pt-3 g-2">
+                <div class="col-12 col-md-6 text-center text-md-start small text-muted">
+                    © 2026 Algorithm Library. All rights reserved.
+                    This project is created for educational and personal learning use and may be shared with attribution.
+                </div>
+                <div class="col-12 col-md-6 text-center text-md-end small">
+                    <!-- <span class="text-secondary me-2">Designed for students, viva examinations, and Django template integration.</span> -->
+                    <a href="#home" class="spa-nav-link text-gold" data-target="home">Back to top <i class="bi bi-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======================================================================
+         CONTACT & FEEDBACK MODAL
+         ====================================================================== -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-zen">
+                <div class="modal-header modal-header-zen">
+                    <h5 class="modal-title font-serif text-gold" id="contactModalLabel">
+                        <i class="bi bi-send-fill me-2"></i> Get in Touch & Feedback
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="small text-secondary mb-3">
+                        Have a suggestion for a new algorithm, viva examination topic, or collaboration? Reach out directly via social media or send a quick note below.
+                    </p>
+
+                    <!-- Quick Contact Pills -->
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <a href="https://www.linkedin.com/in/shubham-tiwari-ba93ba425/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ctrl">
+                            <i class="bi bi-linkedin text-gold me-1"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/shubh43-commits" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ctrl">
+                            <i class="bi bi-github text-gold me-1"></i> GitHub
+                        </a>
+                        <button class="btn btn-sm btn-ctrl" onclick="navigator.clipboard.writeText('itzshubham6143@gmail.com'); alert('Email address copied to clipboard: itzshubham6143@gmail.com');">
+                            <i class="bi bi-clipboard me-1 text-gold"></i> Copy Email
+                        </button>
+                    </div>
+
+                    <!-- Interactive Feedback Form -->
+                    <form id="contact-feedback-form" onsubmit="event.preventDefault(); document.getElementById('contact-alert-success').classList.remove('d-none'); setTimeout(() => { bootstrap.Modal.getInstance(document.getElementById('contactModal')).hide(); document.getElementById('contact-alert-success').classList.add('d-none'); document.getElementById('contact-feedback-form').reset(); }, 2000);">
+                        <div id="contact-alert-success" class="alert alert-success d-none py-2 small" role="alert">
+                            <i class="bi bi-check-circle-fill me-1"></i> Thank you! Your feedback message has been logged.
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-name" class="form-label small text-secondary">Your Name / Viva Roll No.</label>
+                            <input type="text" class="form-control form-control-zen" id="contact-name" placeholder="e.g. Alex Mercer" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-email" class="form-label small text-secondary">Your Email Address</label>
+                            <input type="email" class="form-control form-control-zen" id="contact-email" placeholder="e.g. student@university.edu" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-message" class="form-label small text-secondary">Message / Proposed Algorithm</label>
+                            <textarea class="form-control form-control-zen" id="contact-message" rows="3" placeholder="Share your suggestions, questions, or viva notes..." required></textarea>
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-sm btn-ctrl me-2" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-sm btn-ctrl-primary px-3">
+                                <i class="bi bi-send me-1"></i> Submit Feedback
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Visualizer Submodules (Loaded in strict dependency order) -->
+    <script src="js/audio.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/grid.js"></script>
+    <script src="js/quiz-data.js"></script>
+    <script src="js/algorithms/sorting.js"></script>
+    <script src="js/algorithms/searching.js"></script>
+    <script src="js/algorithms/pathfinding.js"></script>
+
+    <!-- Main Controller & Orchestrator -->
+    <script src="script.js"></script>
+
+</body>
+</html>
