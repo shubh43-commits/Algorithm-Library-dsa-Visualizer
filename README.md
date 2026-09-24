@@ -75,25 +75,6 @@ DsaProject/
 └── .gitignore
 ```
 
-## How to run
-
-### Option 1: Open directly in a browser
-Simply open `index.html` in your browser.
-
-### Option 2: Run a local web server
-From the project folder:
-
-```bash
-cd DsaProject
-python -m http.server 3000
-```
-
-Then open:
-
-```text
-http://localhost:3000
-```
-
 ## Notes
 
 - This is a client-side app; no build step is required.
